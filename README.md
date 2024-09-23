@@ -1,8 +1,17 @@
-## sbt project compiled with Scala 3
 
-### Usage
+## Usage 
 
-This is a normal sbt project. You can compile code with `sbt compile`, run it with `sbt run`, and `sbt console` will start a Scala 3 REPL.
+### aws credentialsの設定
+AWSのコンソールからIAMユーザーを作成し、SNS Publishの権限を付与する。
+次にアクセスキーとシークレットキーを取得し、`~/.aws/credentials`に貼り付ける。
 
-For more information on the sbt-dotty plugin, see the
-[scala3-example-project](https://github.com/scala/scala3-example-project/blob/main/README.md).
+```
+[sns-publisher]
+aws_access_key_id = foo
+aws_secret_access_key = foo
+```
+
+### `.jar`の作成
+```shell
+sbt assebmly
+```
