@@ -18,7 +18,7 @@ docker-compose up -d
 
 ## Lmabda
 
-### Lamda関数の作成と`.jar`の作成
+### Lambda関数の作成と`.jar`の作成
 ```shell
 sbt assembly
 ```
@@ -30,7 +30,7 @@ aws --endpoint-url http://localhost:54566 lambda create-function \
   --region us-east-1 \
   --function-name testFunction \
   --runtime java11 \
-  --zip-file fileb://target/scala-3.5.1/scala-3-sandbox-for-lamda-assembly-0.1.0-SNAPSHOT.jar \
+  --zip-file fileb://target/scala-3.5.1/scala-3-sandbox-for-lambda-assembly-0.1.0-SNAPSHOT.jar \
   --handler example.Main::hello \
   --role arn:aws:iam::000000000000:role/lambda-role \
   --profile localstack
@@ -41,7 +41,7 @@ Lambda関数の更新をしたい場合は、以下のコマンドを実行す�
 aws --endpoint-url http://localhost:54566 lambda update-function-code \
   --region us-east-1 \
   --function-name testFunction \
-  --zip-file fileb://target/scala-3.5.1/scala-3-sandbox-for-lamda-assembly-0.1.0-SNAPSHOT.jar \
+  --zip-file fileb://target/scala-3.5.1/scala-3-sandbox-for-lambda-assembly-0.1.0-SNAPSHOT.jar \
   --profile localstack
 ```
 
@@ -61,7 +61,7 @@ aws --endpoint-url http://localhost:54566 lambda invoke \
   --function-name testFunction \
   --payload $(echo '{"key1": "value1"}' | base64) \
   --profile localstack \
-  logs/lamda-output.log
+  logs/lambda-output.log
 ```
 
 ## SNS

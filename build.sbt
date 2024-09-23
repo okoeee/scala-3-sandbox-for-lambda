@@ -8,7 +8,7 @@ ThisBuild / assemblyMergeStrategy := {
 lazy val root = project
   .in(file("."))
   .settings(
-    name := "scala-3-sandbox-for-lamda",
+    name := "scala-3-sandbox-for-lambda",
     version := "0.1.0-SNAPSHOT",
 
     scalaVersion := scala3Version,
