@@ -16,4 +16,5 @@ lazy val root = project
     libraryDependencies += "org.scalameta" %% "munit" % "1.0.0" % Test,
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-core" % "1.2.3",
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-events" % "3.14.0",
+    libraryDependencies += "software.amazon.awssdk" % "sns" % "2.28.6",
   )
