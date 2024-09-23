@@ -15,7 +15,7 @@ object SnsPublisher {
         .region(Region.US_EAST_1)
         .build()
 
-    val topicArn = "arn:aws:sns:us-east-1:557789326598:TestForLamda"
+    val topicArn = "arn:aws:sns:us-east-1:557789326598:TestForLambda"
 
     val publishRequest = PublishRequest.builder()
       .message("Hello, world!")
