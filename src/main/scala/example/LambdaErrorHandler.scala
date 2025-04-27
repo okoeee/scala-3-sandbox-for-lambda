@@ -4,7 +4,6 @@ import com.amazonaws.services.lambda.runtime.{Context, RequestHandler}
 import example.json.{DestinationFailureEvent, InputData}
 import io.circe.generic.auto.*
 import io.circe.jawn.decode
-import io.circe.parser
 
 import java.io.InputStream
 
