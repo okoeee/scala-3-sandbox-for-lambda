@@ -2,14 +2,11 @@ package example
 
 import com.amazonaws.services.lambda.runtime.events.SNSEvent
 import com.amazonaws.services.lambda.runtime.{Context, RequestHandler}
+import example.json.InputData
 import io.circe.generic.auto.*
 import io.circe.jawn.decode
 
 class LambdaHandler extends RequestHandler[SNSEvent, Unit] {
-
-  case class InputData(
-      id: Long
-  )
 
   override def handleRequest(event: SNSEvent, context: Context): Unit = {
     event.getRecords.forEach { record =>
