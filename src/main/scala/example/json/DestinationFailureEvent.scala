@@ -5,7 +5,7 @@ case class SnsData(
     MessageId: String,
     TopicArn:  String,
     Subject:   Option[String],
-    Message:   InputData
+    Message:   String
 )
 case class SnsRecord(
     EventSource: String,
