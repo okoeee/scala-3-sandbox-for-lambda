@@ -18,6 +18,7 @@ class LambdaErrorHandler extends RequestHandler[InputStream, Unit] {
         event.requestPayload.Records.foreach { record =>
           println(s"Record: ${record}")
           println(s"Message: ${record.Sns.Message}")
+          println(s"Message Id: ${record.Sns.Message.id}")
         }
       case Left(error)  =>
         println(inputString)
