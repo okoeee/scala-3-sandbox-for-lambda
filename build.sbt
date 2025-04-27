@@ -1,4 +1,5 @@
 val scala3Version = "3.5.1"
+val circeVersion = "0.14.12"
 
 ThisBuild / assemblyMergeStrategy := {
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
@@ -17,6 +18,17 @@ lazy val root = project
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-core" % "1.2.3",
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-events" % "3.14.0",
     libraryDependencies += "software.amazon.awssdk" % "sns" % "2.28.6",
+
+    libraryDependencies ++= Seq(
+      "io.circe" %% "circe-core",
+      "io.circe" %% "circe-generic",
+      "io.circe" %% "circe-parser"
+    ).map(_ % circeVersion),
+
     libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.19",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.19" % "test",
+)
+
+scalacOptions ++= Seq(
+  "-Xmax-inlines", "64"
 )
